@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Stats Champions Arena</title>
+  <!-- Google Fonts for premium typography -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Space+Grotesk:wght@300;500;700&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <!-- Dynamic Particle Canvas Background -->
+  <canvas id="particleCanvas"></canvas>
+
+  <!-- Screen Vignette/Edge Glow Overlay for Visual Feedback -->
+  <div id="screenGlow" class="screen-glow"></div>
+
+  <!-- Giant Banner Notifications (BENAR / SALAH) -->
+  <div id="feedbackBanner" class="feedback-banner">
+    <div class="banner-content">BENAR!</div>
+  </div>
+
+  <!-- Main Game Container -->
+  <div class="app-container">
+    <div class="header-minimal">
+      <button id="btnAdmin" class="btn-neon btn-purple">
+        <span class="btn-glow-icon">🛠️</span> Kelola Soal
+      </button>
+    </div>
+
+    <main class="game-main">
+      <!-- Challenge Board Grid -->
+      <section class="board-section">
+        <div class="board-header">
+          <h2 class="section-title">PILIH TANTANGAN KUIS</h2>
+          <p class="section-desc">Pecahkan soal di mejamu, lalu berebut lari ke depan laptop untuk menjawab!</p>
+        </div>
+        <div id="quizBoard" class="quiz-board-grid">
+          <!-- Quiz cards will be generated here by JavaScript -->
+        </div>
+
+        <!-- Empty State (When all questions are solved) -->
+        <div id="victoryScreen" class="victory-screen hidden">
+          <div class="trophy-wrapper animate-trophy">
+            <span class="trophy-emoji">🏆</span>
+          </div>
+          <h1 class="victory-title">ARENA BERSIH!</h1>
+          <p class="victory-subtitle">Semua tantangan kuis statistika telah berhasil diselesaikan!</p>
+          <button id="btnPlayAgain" class="btn-neon btn-gold btn-large">Mulai Baru 🎮</button>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <!-- Modal: Soal & Input Jawaban -->
+  <div id="questionModal" class="modal-overlay hidden">
+    <div class="modal-card">
+      <button class="modal-close" id="btnQClose">&times;</button>
+      <div class="modal-badge-row">
+        <span id="modalCategory" class="badge badge-purple">Probabilitas</span>
+        <span id="modalPoints" class="badge badge-gold">200 PTS</span>
+      </div>
+      <div class="modal-body">
+        <div class="question-container">
+          <p id="modalQuestionText" class="question-text">
+            Mencari nilai rata-rata dari data kelompok...
+          </p>
+        </div>
+        <form id="answerForm" class="answer-form" autocomplete="off" onsubmit="return false;">
+          <div class="input-group">
+            <label for="answerInput" class="input-label">MASUKKAN JAWABAN ANDA:</label>
+            <input type="text" id="answerInput" class="custom-input" placeholder="Ketik jawaban di sini..." required>
+            <span class="input-glow-bar"></span>
+          </div>
+          <button type="submit" id="btnVerify" class="btn-neon btn-green btn-large btn-full">
+            <span class="btn-glow-icon"></span> VERIFIKASI JAWABAN
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal: Kelola Soal (Tutor Admin Panel) -->
+  <div id="adminModal" class="modal-overlay hidden">
+    <div class="modal-card admin-card">
+      <button class="modal-close" id="btnAdminClose">&times;</button>
+      <h2 class="modal-title neon-text-purple">KELOLA BANK SOAL</h2>
+
+      <!-- Form to Add Question -->
+      <form id="addQuestionForm" class="admin-form">
+        <h3 class="form-section-title">Tambah Soal Baru</h3>
+        <div class="form-grid">
+          <div class="form-group">
+            <label for="inputCategory">Kategori</label>
+            <input type="text" id="inputCategory" placeholder="Contoh: Mean/Median, Peluang" required>
+          </div>
+          <div class="form-group">
+            <label for="inputPoints">Poin</label>
+            <select id="inputPoints" required>
+              <option value="100">100 PTS</option>
+              <option value="150">150 PTS</option>
+              <option value="200" selected>200 PTS</option>
+              <option value="250">250 PTS</option>
+              <option value="300">300 PTS</option>
+              <option value="500">500 PTS</option>
+            </select>
+          </div>
+          <div class="form-group full-width">
+            <label for="inputQuestion">Pertanyaan (Gunakan sub/sup html jika perlu, misal: x̄, σ²)</label>
+            <textarea id="inputQuestion" rows="3" placeholder="Tulis soal kuis di sini..." required></textarea>
+          </div>
+          <div class="form-group full-width">
+            <label for="inputAnswer">Jawaban Benar (Gunakan huruf kecil/angka, toleransi spasi diatur sistem)</label>
+            <input type="text" id="inputAnswer" placeholder="Contoh: 15 atau 0.5 atau 3/4" required>
+          </div>
+        </div>
+        <button type="submit" class="btn-neon btn-purple btn-medium">Tambah Soal ➕</button>
+      </form>
+
+      <!-- Active Questions List -->
+      <div class="active-questions-section">
+        <h3 class="form-section-title">Daftar Soal Saat Ini</h3>
+        <div class="questions-list-wrapper">
+          <table class="questions-table">
+            <thead>
+              <tr>
+                <th>No</th>
+                <th>Kategori</th>
+                <th>Poin</th>
+                <th>Pertanyaan</th>
+                <th>Jawaban</th>
+                <th>Aksi</th>
+              </tr>
+            </thead>
+            <tbody id="adminQuestionsTableBody">
+              <!-- Question rows will be generated here -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+
+</html>
