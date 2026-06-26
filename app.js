@@ -4,66 +4,376 @@
 const PRELOADED_QUESTIONS = [
   {
     id: 1,
-    category: "Ukuran Pemusatan",
-    points: 100,
-    question: "Diberikan data nilai statistika: 6, 7, 8, 8, 5, 9, 8, 7, 6, 10.\nTentukan nilai Median dari data tersebut!",
-    correctAnswer: "7.5",
+    category: "Pemusatan Data",
+    points: 200,
+    question: `<p>Tabel berikut menunjukkan nilai ulangan matematika 50 siswa:</p>
+<div class="table-responsive">
+  <table class="quiz-table">
+    <thead>
+      <tr>
+        <th>Interval Nilai</th>
+        <th>Frekuensi (f)</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td>40 - 49</td><td>5</td></tr>
+      <tr><td>50 - 59</td><td>9</td></tr>
+      <tr><td>60 - 69</td><td>14</td></tr>
+      <tr><td>70 - 79</td><td>13</td></tr>
+      <tr><td>80 - 89</td><td>9</td></tr>
+    </tbody>
+  </table>
+</div>
+<p style="margin-top: 15px;">Tentukan nilai: (1) Mean, (2) Median, dan (3) Modus dari data kelompok tersebut!</p>`,
+    questionPreview: "Tentukan Mean, Median, dan Modus dari tabel data kelompok nilai ulangan 50 siswa.",
+    inputs: [
+      { label: "1) Mean (Rata-rata)", type: "text", correctAnswer: "66.9" },
+      { label: "2) Median", type: "text", correctAnswer: "67.36" },
+      { label: "3) Modus", type: "text", correctAnswer: "67.83" }
+    ],
     solved: false
   },
   {
     id: 2,
-    category: "Rata-rata Gabungan",
-    points: 150,
-    question: "Rata-rata tinggi badan 9 siswa adalah 162 cm. Jika ditambah 1 siswa baru, rata-ratanya menjadi 163 cm. Berapa tinggi badan siswa baru tersebut (dalam cm)?",
-    correctAnswer: "172",
+    category: "Penyebaran Data",
+    points: 200,
+    question: `<p>Diketahui data nilai ujian 10 siswa sebagai berikut:</p>
+<div class="data-box">60, 64, 68, 70, 73, 76, 79, 82, 86, 92</div>
+<p style="margin-top: 15px;">Tentukan:</p>
+<ol style="margin-left: 20px; margin-top: 5px;">
+  <li>Range (jangkauan) data</li>
+  <li>Standar deviasi sampel</li>
+</ol>`,
+    questionPreview: "Tentukan Range (jangkauan) dan Standar deviasi sampel dari data ujian 10 siswa.",
+    inputs: [
+      { label: "a) Range (Jangkauan)", type: "text", correctAnswer: "32" },
+      { label: "b) Standar Deviasi Sampel", type: "text", correctAnswer: "10" }
+    ],
     solved: false
   },
   {
     id: 3,
-    category: "Peluang Kejadian",
-    points: 100,
-    question: "Sebuah dadu dan sebuah koin dilempar undi bersamaan satu kali. Peluang munculnya angka prima pada dadu DAN gambar (G) pada koin adalah...",
-    correctAnswer: "1/4",
+    category: "Pemusatan Data",
+    points: 200,
+    question: `<p>Diberikan data kelompok distribusi frekuensi waktu pengerjaan tugas (menit) dari 30 siswa:</p>
+<div class="table-responsive">
+  <table class="quiz-table">
+    <thead>
+      <tr>
+        <th>Durasi (Menit)</th>
+        <th>Frekuensi (f)</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td>10 - 19</td><td>3</td></tr>
+      <tr><td>20 - 29</td><td>7</td></tr>
+      <tr><td>30 - 39</td><td>10</td></tr>
+      <tr><td>40 - 49</td><td>6</td></tr>
+      <tr><td>50 - 59</td><td>4</td></tr>
+    </tbody>
+  </table>
+</div>
+<p style="margin-top: 15px;">Tentukan nilai: (1) Mean, (2) Median, dan (3) Modus data tersebut!</p>`,
+    questionPreview: "Hitung Mean, Median, dan Modus dari waktu pengerjaan tugas 30 siswa.",
+    inputs: [
+      { label: "1) Mean (Rata-rata)", type: "text", correctAnswer: "34.83" },
+      { label: "2) Median", type: "text", correctAnswer: "34.5" },
+      { label: "3) Modus", type: "text", correctAnswer: "33.79" }
+    ],
     solved: false
   },
   {
     id: 4,
-    category: "Kombinatorika",
+    category: "Penyebaran Data",
     points: 200,
-    question: "Dari 8 orang siswa berprestasi, akan dipilih 3 orang untuk mengikuti kompetisi statistika tingkat nasional. Banyak cara pemilihan susunan delegasi tersebut adalah...",
-    correctAnswer: "56",
+    question: `<p>Diberikan sampel data berat badan (kg) dari 5 ekor hewan piaraan:</p>
+<div class="data-box">7, 7, 10, 13, 13</div>
+<p style="margin-top: 15px;">Tentukan nilai:</p>
+<ol style="margin-left: 20px; margin-top: 5px;">
+  <li>Range (jangkauan) data</li>
+  <li>Standar deviasi sampel</li>
+</ol>`,
+    questionPreview: "Hitung Range dan Standar deviasi sampel berat badan 5 hewan piaraan.",
+    inputs: [
+      { label: "a) Range (Jangkauan)", type: "text", correctAnswer: "6" },
+      { label: "b) Standar Deviasi Sampel", type: "text", correctAnswer: "3" }
+    ],
     solved: false
   },
   {
     id: 5,
-    category: "Ukuran Penyebaran",
-    points: 100,
-    question: "Diketahui data statistik: 4, 6, 8, 2, 5. Tentukan nilai Jangkauan (Range) dari data tersebut!",
-    correctAnswer: "6",
+    category: "Pemusatan Data",
+    points: 200,
+    question: `<p>Tabel distribusi frekuensi tinggi tanaman hias (cm) setelah 1 bulan:</p>
+<div class="table-responsive">
+  <table class="quiz-table">
+    <thead>
+      <tr>
+        <th>Tinggi (cm)</th>
+        <th>Frekuensi (f)</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td>50 - 54</td><td>4</td></tr>
+      <tr><td>55 - 59</td><td>8</td></tr>
+      <tr><td>60 - 64</td><td>12</td></tr>
+      <tr><td>65 - 69</td><td>10</td></tr>
+      <tr><td>70 - 74</td><td>6</td></tr>
+    </tbody>
+  </table>
+</div>
+<p style="margin-top: 15px;">Tentukan nilai: (1) Mean, (2) Median, dan (3) Modus tinggi tanaman hias!</p>`,
+    questionPreview: "Tentukan nilai Mean, Median, dan Modus dari tabel tinggi tanaman hias.",
+    inputs: [
+      { label: "1) Mean (Rata-rata)", type: "text", correctAnswer: "62.75" },
+      { label: "2) Median", type: "text", correctAnswer: "62.83" },
+      { label: "3) Modus", type: "text", correctAnswer: "62.83" }
+    ],
     solved: false
   },
   {
     id: 6,
-    category: "Peluang Dadu",
+    category: "Penyebaran Data",
     points: 200,
-    question: "Dua buah dadu dilempar bersamaan satu kali. Peluang munculnya mata dadu berjumlah 8 adalah...",
-    correctAnswer: "5/36",
+    question: `<p>Hasil pengamatan suhu ruangan (dalam °C) pada 5 titik berbeda adalah sebagai berikut:</p>
+<div class="data-box">11, 11, 15, 19, 19</div>
+<p style="margin-top: 15px;">Hitunglah nilai:</p>
+<ol style="margin-left: 20px; margin-top: 5px;">
+  <li>Range (jangkauan) suhu</li>
+  <li>Standar deviasi sampel suhu</li>
+</ol>`,
+    questionPreview: "Tentukan Range dan Standar deviasi sampel dari 5 titik suhu ruangan.",
+    inputs: [
+      { label: "a) Range (Jangkauan)", type: "text", correctAnswer: "8" },
+      { label: "b) Standar Deviasi Sampel", type: "text", correctAnswer: "4" }
+    ],
     solved: false
   },
   {
     id: 7,
-    category: "Kuartil Data",
+    category: "Pemusatan Data",
     points: 200,
-    question: "Tentukan Kuartil Atas (Q₃) dari kumpulan data berikut:\n2, 3, 5, 5, 7, 8, 8, 9, 10.",
-    correctAnswer: "8.5",
+    question: `<p>Data nilai tes seleksi masuk dari 20 peserta ujian:</p>
+<div class="table-responsive">
+  <table class="quiz-table">
+    <thead>
+      <tr>
+        <th>Rentang Nilai</th>
+        <th>Frekuensi (f)</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td>60 - 69</td><td>3</td></tr>
+      <tr><td>70 - 79</td><td>6</td></tr>
+      <tr><td>80 - 89</td><td>10</td></tr>
+      <tr><td>90 - 99</td><td>1</td></tr>
+    </tbody>
+  </table>
+</div>
+<p style="margin-top: 15px;">Hitung nilai: (1) Mean, (2) Median, dan (3) Modus dari nilai tes seleksi tersebut!</p>`,
+    questionPreview: "Tentukan Mean, Median, dan Modus nilai tes masuk dari 20 peserta.",
+    inputs: [
+      { label: "1) Mean (Rata-rata)", type: "text", correctAnswer: "79.0" },
+      { label: "2) Median", type: "text", correctAnswer: "80.5" },
+      { label: "3) Modus", type: "text", correctAnswer: "82.58" }
+    ],
     solved: false
   },
   {
     id: 8,
-    category: "Deviasi Standar",
-    points: 250,
-    question: "Tentukan nilai Varian (ragam) dari data tunggal berikut:\n2, 4, 5, 6, 8 (Petunjuk: x̄ = 5)",
-    correctAnswer: "4",
+    category: "Penyebaran Data",
+    points: 200,
+    question: `<p>Data berikut adalah waktu tunggu layanan pelanggan (dalam menit) di loket pos:</p>
+<div class="data-box">15, 15, 20, 25, 25</div>
+<p style="margin-top: 15px;">Tentukan nilai:</p>
+<ol style="margin-left: 20px; margin-top: 5px;">
+  <li>Range (jangkauan) waktu</li>
+  <li>Standar deviasi sampel waktu</li>
+</ol>`,
+    questionPreview: "Tentukan Range dan Standar deviasi sampel waktu tunggu layanan pelanggan.",
+    inputs: [
+      { label: "a) Range (Jangkauan)", type: "text", correctAnswer: "10" },
+      { label: "b) Standar Deviasi Sampel", type: "text", correctAnswer: "5" }
+    ],
+    solved: false
+  },
+  {
+    id: 9,
+    category: "Pemusatan Data",
+    points: 200,
+    question: `<p>Berikut adalah tabel data kelompok pengeluaran harian 50 keluarga (dalam ribuan Rupiah):</p>
+<div class="table-responsive">
+  <table class="quiz-table">
+    <thead>
+      <tr>
+        <th>Pengeluaran (Ribu Rp)</th>
+        <th>Frekuensi (f)</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td>100 - 119</td><td>5</td></tr>
+      <tr><td>120 - 139</td><td>15</td></tr>
+      <tr><td>140 - 159</td><td>20</td></tr>
+      <tr><td>160 - 179</td><td>8</td></tr>
+      <tr><td>180 - 199</td><td>2</td></tr>
+    </tbody>
+  </table>
+</div>
+<p style="margin-top: 15px;">Tentukan: (1) Mean, (2) Median, dan (3) Modus pengeluaran harian tersebut!</p>`,
+    questionPreview: "Tentukan Mean, Median, dan Modus tabel pengeluaran harian 50 keluarga.",
+    inputs: [
+      { label: "1) Mean (Rata-rata)", type: "text", correctAnswer: "144.3" },
+      { label: "2) Median", type: "text", correctAnswer: "144.5" },
+      { label: "3) Modus", type: "text", correctAnswer: "145.38" }
+    ],
+    solved: false
+  },
+  {
+    id: 10,
+    category: "Penyebaran Data",
+    points: 200,
+    question: `<p>Diberikan data nilai skor kuis mingguan dari 5 siswa les privat:</p>
+<div class="data-box">6, 6, 8, 10, 10</div>
+<p style="margin-top: 15px;">Tentukan:</p>
+<ol style="margin-left: 20px; margin-top: 5px;">
+  <li>Range (jangkauan) skor</li>
+  <li>Standar deviasi sampel skor</li>
+</ol>`,
+    questionPreview: "Tentukan Range dan Standar deviasi sampel dari skor kuis 5 siswa.",
+    inputs: [
+      { label: "a) Range (Jangkauan)", type: "text", correctAnswer: "4" },
+      { label: "b) Standar Deviasi Sampel", type: "text", correctAnswer: "2" }
+    ],
+    solved: false
+  },
+  {
+    id: 11,
+    category: "Pemusatan Data",
+    points: 200,
+    question: `<p>Tabel distribusi frekuensi nilai matematika dari 50 siswa kelas A:</p>
+<div class="table-responsive">
+  <table class="quiz-table">
+    <thead>
+      <tr>
+        <th>Interval Nilai</th>
+        <th>Frekuensi (f)</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td>31 - 40</td><td>4</td></tr>
+      <tr><td>41 - 50</td><td>6</td></tr>
+      <tr><td>51 - 60</td><td>9</td></tr>
+      <tr><td>61 - 70</td><td>14</td></tr>
+      <tr><td>71 - 80</td><td>10</td></tr>
+      <tr><td>81 - 90</td><td>7</td></tr>
+    </tbody>
+  </table>
+</div>
+<p style="margin-top: 15px;">Hitunglah nilai: (1) Mean, (2) Median, dan (3) Modus nilai matematika tersebut!</p>`,
+    questionPreview: "Tentukan Mean, Median, dan Modus dari data kelompok nilai matematika 50 siswa.",
+    inputs: [
+      { label: "1) Mean (Rata-rata)", type: "text", correctAnswer: "63.7" },
+      { label: "2) Median", type: "text", correctAnswer: "64.79" },
+      { label: "3) Modus", type: "text", correctAnswer: "66.06" }
+    ],
+    solved: false
+  },
+  {
+    id: 12,
+    category: "Penyebaran Data",
+    points: 200,
+    question: `<p>Pengukuran waktu respon sistem (dalam milidetik) pada 5 kali server request:</p>
+<div class="data-box">40, 40, 50, 60, 60</div>
+<p style="margin-top: 15px;">Tentukan nilai:</p>
+<ol style="margin-left: 20px; margin-top: 5px;">
+  <li>Range (jangkauan) respon</li>
+  <li>Standar deviasi sampel respon</li>
+</ol>`,
+    questionPreview: "Tentukan Range dan Standar deviasi sampel waktu respon request server.",
+    inputs: [
+      { label: "a) Range (Jangkauan)", type: "text", correctAnswer: "20" },
+      { label: "b) Standar Deviasi Sampel", type: "text", correctAnswer: "10" }
+    ],
+    solved: false
+  },
+  {
+    id: 13,
+    category: "Pemusatan Data",
+    points: 200,
+    question: `<p>Tabel frekuensi tingkat kesalahan ketik (typo) per halaman buku:</p>
+<div class="table-responsive">
+  <table class="quiz-table">
+    <thead>
+      <tr>
+        <th>Jumlah Typo</th>
+        <th>Frekuensi (f)</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td>1 - 5</td><td>4</td></tr>
+      <tr><td>6 - 10</td><td>5</td></tr>
+      <tr><td>11 - 15</td><td>8</td></tr>
+      <tr><td>16 - 20</td><td>2</td></tr>
+      <tr><td>21 - 25</td><td>1</td></tr>
+    </tbody>
+  </table>
+</div>
+<p style="margin-top: 15px;">Hitunglah nilai: (1) Mean, (2) Median, dan (3) Modus typo!</p>`,
+    questionPreview: "Tentukan Mean, Median, dan Modus dari data kelompok frekuensi typo.",
+    inputs: [
+      { label: "1) Mean (Rata-rata)", type: "text", correctAnswer: "10.75" },
+      { label: "2) Median", type: "text", correctAnswer: "11.13" },
+      { label: "3) Modus", type: "text", correctAnswer: "12.17" }
+    ],
+    solved: false
+  },
+  {
+    id: 14,
+    category: "Penyebaran Data",
+    points: 200,
+    question: `<p>Sampel jumlah produksi roti harian (buah) di sebuah toko roti mini:</p>
+<div class="data-box">24, 24, 30, 36, 36</div>
+<p style="margin-top: 15px;">Tentukan nilai:</p>
+<ol style="margin-left: 20px; margin-top: 5px;">
+  <li>Range (jangkauan) produksi</li>
+  <li>Standar deviasi sampel produksi</li>
+</ol>`,
+    questionPreview: "Tentukan Range dan Standar deviasi sampel jumlah produksi roti harian.",
+    inputs: [
+      { label: "a) Range (Jangkauan)", type: "text", correctAnswer: "12" },
+      { label: "b) Standar Deviasi Sampel", type: "text", correctAnswer: "6" }
+    ],
+    solved: false
+  },
+  {
+    id: 15,
+    category: "Pemusatan Data",
+    points: 200,
+    question: `<p>Data kelompok tinggi badan (cm) 40 calon taruna akademi militer:</p>
+<div class="table-responsive">
+  <table class="quiz-table">
+    <thead>
+      <tr>
+        <th>Tinggi (cm)</th>
+        <th>Frekuensi (f)</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td>150 - 154</td><td>5</td></tr>
+      <tr><td>155 - 159</td><td>10</td></tr>
+      <tr><td>160 - 164</td><td>15</td></tr>
+      <tr><td>165 - 169</td><td>8</td></tr>
+      <tr><td>170 - 174</td><td>2</td></tr>
+    </tbody>
+  </table>
+</div>
+<p style="margin-top: 15px;">Hitunglah nilai: (1) Mean, (2) Median, dan (3) Modus tinggi badan tersebut!</p>`,
+    questionPreview: "Tentukan Mean, Median, dan Modus tinggi badan kelompok 40 calon taruna.",
+    inputs: [
+      { label: "1) Mean (Rata-rata)", type: "text", correctAnswer: "161" },
+      { label: "2) Median", type: "text", correctAnswer: "161.17" },
+      { label: "3) Modus", type: "text", correctAnswer: "161.58" }
+    ],
     solved: false
   }
 ];
@@ -323,7 +633,13 @@ function checkAnswer(userVal, correctVal) {
 
 // 5. Game Screen Rendering & State Control
 function loadQuestions() {
-  const saved = localStorage.getItem("stats_quiz_questions");
+  let saved = null;
+  try {
+    saved = localStorage.getItem("stats_quiz_questions_v3");
+  } catch (e) {
+    console.warn("localStorage is not accessible (likely running on file:// protocol). Using in-memory fallback.");
+  }
+
   if (saved) {
     try {
       questions = JSON.parse(saved);
@@ -337,7 +653,11 @@ function loadQuestions() {
 }
 
 function saveQuestionsToStorage() {
-  localStorage.setItem("stats_quiz_questions", JSON.stringify(questions));
+  try {
+    localStorage.setItem("stats_quiz_questions_v3", JSON.stringify(questions));
+  } catch (e) {
+    console.warn("localStorage is not accessible. Progress will not be saved.");
+  }
 }
 
 // Generate the grid of cards
@@ -362,20 +682,17 @@ function renderBoard() {
     card.className = "quiz-card";
     card.dataset.id = q.id;
 
-    // Replace text newlines with html breaks
-    const previewText = q.question.replace(/\n/g, "<br>");
-
     card.innerHTML = `
       <div class="card-header">
         <span class="card-category">${q.category}</span>
         <span class="card-num">SOAL #${q.id}</span>
       </div>
       <div class="card-body">
-        <p class="card-question-preview">${previewText}</p>
+        <div class="card-question-content">${q.question}</div>
       </div>
       <div class="card-footer">
         <span class="card-points">${q.points} PTS</span>
-        <span class="card-action">Klik & Jawab</span>
+        <span class="card-action">Klik & Jawab 🎮</span>
       </div>
     `;
 
@@ -389,7 +706,7 @@ const qModal = document.getElementById("questionModal");
 const qText = document.getElementById("modalQuestionText");
 const qCategory = document.getElementById("modalCategory");
 const qPoints = document.getElementById("modalPoints");
-const qInput = document.getElementById("answerInput");
+let qInput = document.getElementById("answerInput");
 const qForm = document.getElementById("answerForm");
 
 function openQuestionModal(id) {
@@ -398,15 +715,74 @@ function openQuestionModal(id) {
   if (!q) return;
 
   activeQuestionId = id;
-  qText.innerHTML = q.question.replace(/\n/g, "<br>");
+  
+  // Show a compact question preview reminder instead of full HTML question
+  qText.innerHTML = `<div class="modal-question-reminder">${q.questionPreview}</div>`;
+  
   qCategory.textContent = q.category;
   qPoints.textContent = `${q.points} PTS`;
-  qInput.value = "";
+
+  // Dynamically generate inputs
+  if (q.inputs && q.inputs.length > 0) {
+    let html = `<div class="multi-input-container">`;
+    q.inputs.forEach((input, index) => {
+      html += `
+        <div class="sub-question-row">
+          <span class="sub-question-label">${input.label}</span>
+          <div class="sub-question-input-wrapper">
+      `;
+      if (input.type === "select") {
+        html += `
+            <select class="sub-question-select" data-index="${index}" required>
+              ${input.options.map(opt => `<option value="${opt}">${opt}</option>`).join("")}
+            </select>
+        `;
+      } else {
+        html += `
+            <input type="text" class="sub-question-input" data-index="${index}" placeholder="Ketik jawaban..." autocomplete="off" required>
+        `;
+      }
+      html += `
+          </div>
+          <span class="status-icon" id="status-icon-${index}"></span>
+        </div>
+      `;
+    });
+    html += `</div>`;
+
+    const inputGroup = qForm.querySelector(".input-group") || qForm.querySelector(".multi-input-container");
+    if (inputGroup) {
+      inputGroup.outerHTML = html;
+    }
+    
+    // Focus first input
+    setTimeout(() => {
+      const firstField = qForm.querySelector(".sub-question-input, .sub-question-select");
+      if (firstField) firstField.focus();
+    }, 150);
+
+  } else {
+    // Fallback to single standard input
+    const html = `
+      <div class="input-group">
+        <label for="answerInput" class="input-label">MASUKKAN JAWABAN ANDA:</label>
+        <input type="text" id="answerInput" class="custom-input" placeholder="Ketik jawaban di sini..." required>
+        <span class="input-glow-bar"></span>
+      </div>
+    `;
+    const inputGroup = qForm.querySelector(".input-group") || qForm.querySelector(".multi-input-container");
+    if (inputGroup) {
+      inputGroup.outerHTML = html;
+    }
+    
+    qInput = document.getElementById("answerInput");
+    if (qInput) {
+      qInput.value = "";
+      setTimeout(() => qInput.focus(), 150);
+    }
+  }
 
   qModal.classList.remove("hidden");
-
-  // Autofocus input
-  setTimeout(() => qInput.focus(), 150);
 }
 
 function closeQuestionModal() {
@@ -465,8 +841,27 @@ function triggerFeedback(isCorrect) {
       screenGlow.className = "screen-glow";
       feedbackBanner.className = "feedback-banner";
       modalContent.classList.remove("shake");
-      qInput.value = ""; // clear wrong input
-      qInput.focus();
+
+      // Handle focus and field clearing
+      const activeQ = questions.find(q => q.id === activeQuestionId);
+      if (activeQ && activeQ.inputs && activeQ.inputs.length > 0) {
+        activeQ.inputs.forEach((inputInfo, index) => {
+          const field = qForm.querySelector(`[data-index="${index}"]`);
+          if (field && field.classList.contains("input-error")) {
+            if (field.tagName === "INPUT") {
+              field.value = ""; // clear wrong text inputs
+            }
+          }
+        });
+        const firstErrField = qForm.querySelector(".input-error");
+        if (firstErrField) firstErrField.focus();
+      } else {
+        qInput = document.getElementById("answerInput");
+        if (qInput) {
+          qInput.value = ""; // clear wrong input
+          qInput.focus();
+        }
+      }
     }, 1500);
   }
 }
@@ -480,12 +875,20 @@ function renderAdminTable() {
   adminTableBody.innerHTML = "";
   questions.forEach((q, idx) => {
     const row = document.createElement("tr");
+
+    let displayAnswer = "";
+    if (q.inputs && q.inputs.length > 0) {
+      displayAnswer = q.inputs.map(inp => `${inp.label.split(' ')[0] || ''} ${inp.correctAnswer}`).join(", ");
+    } else {
+      displayAnswer = q.correctAnswer;
+    }
+
     row.innerHTML = `
       <td>${q.id}</td>
       <td><strong>${q.category}</strong></td>
       <td><span style="color:var(--neon-gold)">${q.points} PTS</span></td>
-      <td class="cell-question" title="${q.question.replace(/"/g, '&quot;')}">${q.question.replace(/\n/g, ' ')}</td>
-      <td><code>${q.correctAnswer}</code></td>
+      <td class="cell-question" title="${q.question.replace(/"/g, '&quot;')}">${q.questionPreview || q.question.replace(/<[^>]*>/g, '').replace(/\n/g, ' ')}</td>
+      <td><code>${displayAnswer}</code></td>
       <td>
         <button class="btn-delete" data-id="${q.id}">Hapus 🗑️</button>
       </td>
@@ -573,14 +976,50 @@ document.getElementById("btnPlayAgain").addEventListener("click", () => {
 // Submit answer verifier
 qForm.addEventListener("submit", (e) => {
   e.preventDefault();
-  const userAns = qInput.value;
-  if (!userAns.trim()) return;
 
   const activeQ = questions.find(q => q.id === activeQuestionId);
   if (!activeQ) return;
 
-  const isCorrect = checkAnswer(userAns, activeQ.correctAnswer);
-  triggerFeedback(isCorrect);
+  if (activeQ.inputs && activeQ.inputs.length > 0) {
+    let allCorrect = true;
+
+    // Validate each input field
+    activeQ.inputs.forEach((inputInfo, index) => {
+      const field = qForm.querySelector(`[data-index="${index}"]`);
+      const statusIcon = document.getElementById(`status-icon-${index}`);
+      if (!field || !statusIcon) return;
+
+      const userVal = field.value.trim();
+      const isCorrect = checkAnswer(userVal, inputInfo.correctAnswer);
+
+      // Reset classes
+      field.classList.remove("input-success", "input-error");
+      statusIcon.className = "status-icon";
+
+      if (isCorrect) {
+        field.classList.add("input-success");
+        statusIcon.classList.add("correct");
+        statusIcon.textContent = "✔️";
+      } else {
+        field.classList.add("input-error");
+        statusIcon.classList.add("incorrect");
+        statusIcon.textContent = "❌";
+        allCorrect = false;
+      }
+    });
+
+    triggerFeedback(allCorrect);
+
+  } else {
+    // Original single-input logic
+    const qInputEl = document.getElementById("answerInput");
+    if (!qInputEl) return;
+    const userAns = qInputEl.value;
+    if (!userAns.trim()) return;
+
+    const isCorrect = checkAnswer(userAns, activeQ.correctAnswer);
+    triggerFeedback(isCorrect);
+  }
 });
 
 // Global initializations
