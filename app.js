@@ -86,17 +86,17 @@ const PRELOADED_QUESTIONS = [
     id: 4,
     category: "Penyebaran Data",
     points: 200,
-    question: `<p>Diberikan sampel data berat badan (kg) dari 5 ekor hewan piaraan:</p>
-<div class="data-box">7, 7, 10, 13, 13</div>
+    question: `<p>Diberikan sampel data berat badan (kg) dari 10 ekor hewan piaraan:</p>
+<div class="data-box">45, 48, 50, 50, 52, 55, 55, 58, 60, 67</div>
 <p style="margin-top: 15px;">Tentukan nilai:</p>
 <ol style="margin-left: 20px; margin-top: 5px;">
   <li>Range (jangkauan) data</li>
   <li>Standar deviasi sampel</li>
 </ol>`,
-    questionPreview: "Hitung Range dan Standar deviasi sampel berat badan 5 hewan piaraan.",
+    questionPreview: "Hitung Range dan Standar deviasi sampel berat badan 10 hewan piaraan.",
     inputs: [
-      { label: "a) Range (Jangkauan)", type: "text", correctAnswer: "6" },
-      { label: "b) Standar Deviasi Sampel", type: "text", correctAnswer: "3" }
+      { label: "a) Range (Jangkauan)", type: "text", correctAnswer: "22" },
+      { label: "b) Standar Deviasi Sampel", type: "text", correctAnswer: "6.46" }
     ],
     solved: false
   },
@@ -135,17 +135,17 @@ const PRELOADED_QUESTIONS = [
     id: 6,
     category: "Penyebaran Data",
     points: 200,
-    question: `<p>Hasil pengamatan suhu ruangan (dalam °C) pada 5 titik berbeda adalah sebagai berikut:</p>
-<div class="data-box">11, 11, 15, 19, 19</div>
+    question: `<p>Hasil pengamatan suhu ruangan (dalam °C) pada 10 titik berbeda adalah sebagai berikut:</p>
+<div class="data-box">22, 23, 24, 24, 25, 26, 26, 27, 28, 30</div>
 <p style="margin-top: 15px;">Hitunglah nilai:</p>
 <ol style="margin-left: 20px; margin-top: 5px;">
   <li>Range (jangkauan) suhu</li>
   <li>Standar deviasi sampel suhu</li>
 </ol>`,
-    questionPreview: "Tentukan Range dan Standar deviasi sampel dari 5 titik suhu ruangan.",
+    questionPreview: "Tentukan Range dan Standar deviasi sampel dari 10 titik suhu ruangan.",
     inputs: [
       { label: "a) Range (Jangkauan)", type: "text", correctAnswer: "8" },
-      { label: "b) Standar Deviasi Sampel", type: "text", correctAnswer: "4" }
+      { label: "b) Standar Deviasi Sampel", type: "text", correctAnswer: "2.42" }
     ],
     solved: false
   },
@@ -183,17 +183,17 @@ const PRELOADED_QUESTIONS = [
     id: 8,
     category: "Penyebaran Data",
     points: 200,
-    question: `<p>Data berikut adalah waktu tunggu layanan pelanggan (dalam menit) di loket pos:</p>
-<div class="data-box">15, 15, 20, 25, 25</div>
+    question: `<p>Data berikut adalah waktu tunggu layanan pelanggan (dalam menit) di loket pos dari 10 customer:</p>
+<div class="data-box">8, 10, 12, 14, 15, 16, 18, 20, 22, 25</div>
 <p style="margin-top: 15px;">Tentukan nilai:</p>
 <ol style="margin-left: 20px; margin-top: 5px;">
   <li>Range (jangkauan) waktu</li>
   <li>Standar deviasi sampel waktu</li>
 </ol>`,
-    questionPreview: "Tentukan Range dan Standar deviasi sampel waktu tunggu layanan pelanggan.",
+    questionPreview: "Tentukan Range dan Standar deviasi sampel waktu tunggu 10 customer.",
     inputs: [
-      { label: "a) Range (Jangkauan)", type: "text", correctAnswer: "10" },
-      { label: "b) Standar Deviasi Sampel", type: "text", correctAnswer: "5" }
+      { label: "a) Range (Jangkauan)", type: "text", correctAnswer: "17" },
+      { label: "b) Standar Deviasi Sampel", type: "text", correctAnswer: "5.35" }
     ],
     solved: false
   },
@@ -232,17 +232,17 @@ const PRELOADED_QUESTIONS = [
     id: 10,
     category: "Penyebaran Data",
     points: 200,
-    question: `<p>Diberikan data nilai skor kuis mingguan dari 5 siswa les privat:</p>
-<div class="data-box">6, 6, 8, 10, 10</div>
+    question: `<p>Diberikan data nilai skor kuis mingguan dari 10 siswa les privat:</p>
+<div class="data-box">5, 6, 6, 7, 7, 8, 8, 9, 9, 10</div>
 <p style="margin-top: 15px;">Tentukan:</p>
 <ol style="margin-left: 20px; margin-top: 5px;">
   <li>Range (jangkauan) skor</li>
   <li>Standar deviasi sampel skor</li>
 </ol>`,
-    questionPreview: "Tentukan Range dan Standar deviasi sampel dari skor kuis 5 siswa.",
+    questionPreview: "Tentukan Range dan Standar deviasi sampel dari skor kuis 10 siswa.",
     inputs: [
-      { label: "a) Range (Jangkauan)", type: "text", correctAnswer: "4" },
-      { label: "b) Standar Deviasi Sampel", type: "text", correctAnswer: "2" }
+      { label: "a) Range (Jangkauan)", type: "text", correctAnswer: "5" },
+      { label: "b) Standar Deviasi Sampel", type: "text", correctAnswer: "1.58" }
     ],
     solved: false
   },
@@ -282,17 +282,17 @@ const PRELOADED_QUESTIONS = [
     id: 12,
     category: "Penyebaran Data",
     points: 200,
-    question: `<p>Pengukuran waktu respon sistem (dalam milidetik) pada 5 kali server request:</p>
-<div class="data-box">40, 40, 50, 60, 60</div>
+    question: `<p>Pengukuran waktu respon sistem (dalam milidetik) pada 10 kali server request:</p>
+<div class="data-box">35, 38, 42, 45, 48, 50, 52, 55, 60, 65</div>
 <p style="margin-top: 15px;">Tentukan nilai:</p>
 <ol style="margin-left: 20px; margin-top: 5px;">
   <li>Range (jangkauan) respon</li>
   <li>Standar deviasi sampel respon</li>
 </ol>`,
-    questionPreview: "Tentukan Range dan Standar deviasi sampel waktu respon request server.",
+    questionPreview: "Tentukan Range dan Standar deviasi sampel waktu respon request server (10 request).",
     inputs: [
-      { label: "a) Range (Jangkauan)", type: "text", correctAnswer: "20" },
-      { label: "b) Standar Deviasi Sampel", type: "text", correctAnswer: "10" }
+      { label: "a) Range (Jangkauan)", type: "text", correctAnswer: "30" },
+      { label: "b) Standar Deviasi Sampel", type: "text", correctAnswer: "9.55" }
     ],
     solved: false
   },
@@ -331,17 +331,17 @@ const PRELOADED_QUESTIONS = [
     id: 14,
     category: "Penyebaran Data",
     points: 200,
-    question: `<p>Sampel jumlah produksi roti harian (buah) di sebuah toko roti mini:</p>
-<div class="data-box">24, 24, 30, 36, 36</div>
+    question: `<p>Sampel jumlah produksi roti harian (buah) di sebuah toko roti mini selama 10 hari:</p>
+<div class="data-box">20, 22, 25, 28, 30, 32, 35, 38, 40, 45</div>
 <p style="margin-top: 15px;">Tentukan nilai:</p>
 <ol style="margin-left: 20px; margin-top: 5px;">
   <li>Range (jangkauan) produksi</li>
   <li>Standar deviasi sampel produksi</li>
 </ol>`,
-    questionPreview: "Tentukan Range dan Standar deviasi sampel jumlah produksi roti harian.",
+    questionPreview: "Tentukan Range dan Standar deviasi sampel jumlah produksi roti harian (10 hari).",
     inputs: [
-      { label: "a) Range (Jangkauan)", type: "text", correctAnswer: "12" },
-      { label: "b) Standar Deviasi Sampel", type: "text", correctAnswer: "6" }
+      { label: "a) Range (Jangkauan)", type: "text", correctAnswer: "25" },
+      { label: "b) Standar Deviasi Sampel", type: "text", correctAnswer: "8.09" }
     ],
     solved: false
   },
@@ -635,7 +635,7 @@ function checkAnswer(userVal, correctVal) {
 function loadQuestions() {
   let saved = null;
   try {
-    saved = localStorage.getItem("stats_quiz_questions_v3");
+    saved = localStorage.getItem("stats_quiz_questions_v4");
   } catch (e) {
     console.warn("localStorage is not accessible (likely running on file:// protocol). Using in-memory fallback.");
   }
@@ -654,7 +654,7 @@ function loadQuestions() {
 
 function saveQuestionsToStorage() {
   try {
-    localStorage.setItem("stats_quiz_questions_v3", JSON.stringify(questions));
+    localStorage.setItem("stats_quiz_questions_v4", JSON.stringify(questions));
   } catch (e) {
     console.warn("localStorage is not accessible. Progress will not be saved.");
   }
