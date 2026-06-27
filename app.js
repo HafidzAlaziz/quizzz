@@ -1387,7 +1387,19 @@ if (btnClearLeaderboard) {
   btnClearLeaderboard.addEventListener("click", () => {
     if (confirm("Apakah Anda yakin ingin menghapus SEMUA user dari database leaderboard? Progres mereka akan hilang.")) {
       if (firebaseConnected && db) {
-        db.ref("users").remove();
+        // Hapus semua user KECUALI 'admin' agar admin tidak ikut ter-logout/kepental
+        db.ref("users").once("value").then(snapshot => {
+          const val = snapshot.val();
+          if (val) {
+            const updates = {};
+            Object.keys(val).forEach(key => {
+              if (key !== "admin") {
+                updates[`users/${key}`] = null;
+              }
+            });
+            db.ref().update(updates);
+          }
+        });
       } else {
         try {
           localStorage.removeItem("stats_quiz_local_users");
@@ -1411,10 +1423,12 @@ if (btnResetGameStats) {
           if (val) {
             const updates = {};
             Object.keys(val).forEach(key => {
-              updates[`users/${key}/score`] = 0;
-              updates[`users/${key}/solvedCount`] = 0;
-              updates[`users/${key}/lastSolvedTimestamp`] = Date.now();
-              updates[`users/${key}/solvedQuestions`] = {};
+              if (key !== "admin") {
+                updates[`users/${key}/score`] = 0;
+                updates[`users/${key}/solvedCount`] = 0;
+                updates[`users/${key}/lastSolvedTimestamp`] = Date.now();
+                updates[`users/${key}/solvedQuestions`] = {};
+              }
             });
             db.ref().update(updates);
           }
