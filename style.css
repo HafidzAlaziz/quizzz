@@ -1284,19 +1284,21 @@ body {
   .questions-table th, 
   .questions-table td {
     padding: 8px 10px;
+    white-space: nowrap; /* Prevent columns from wrapping and squishing on mobile */
   }
   
   /* Adjust user badge and buttons layout in header on mobile */
   .header-minimal {
     flex-direction: column;
     gap: 12px;
-    align-items: stretch;
+    align-items: center; /* Center everything to keep it neat and clean */
   }
   
   .header-minimal > div {
     display: flex;
-    justify-content: space-between;
-    width: 100%;
+    justify-content: center;
+    gap: 10px;
+    width: auto;
   }
 }
 
