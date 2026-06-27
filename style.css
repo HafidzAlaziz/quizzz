@@ -1300,6 +1300,14 @@ body {
     gap: 10px;
     width: auto;
   }
+  
+  /* Make correct/incorrect feedback banner fit perfectly on mobile screens */
+  .feedback-banner .banner-content {
+    font-size: 2.2rem;
+    padding: 12px 24px;
+    letter-spacing: 2px;
+    white-space: nowrap; /* Prevent wrapping into ugly multi-lines */
+  }
 }
 
 
