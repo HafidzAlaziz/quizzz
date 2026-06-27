@@ -1253,5 +1253,53 @@ body {
   box-shadow: 0 0 20px rgba(255, 183, 0, 0.5);
 }
 
+/* Responsive overrides for smaller screens (mobile views) */
+@media (max-width: 580px) {
+  .modal-card {
+    padding: 18px 14px;
+    border-radius: 16px;
+    width: 95%;
+  }
+  
+  .modal-title {
+    font-size: 1.25rem;
+    margin-bottom: 15px;
+    letter-spacing: 1px;
+    padding-right: 30px; /* Give room for the close button */
+    text-align: left;
+  }
+  
+  .modal-close {
+    top: 10px;
+    right: 15px;
+    font-size: 1.8rem;
+  }
+  
+  /* Make all table lists scrollable on mobile to avoid truncating columns */
+  .questions-table {
+    min-width: 520px;
+    font-size: 0.8rem;
+  }
+  
+  .questions-table th, 
+  .questions-table td {
+    padding: 8px 10px;
+  }
+  
+  /* Adjust user badge and buttons layout in header on mobile */
+  .header-minimal {
+    flex-direction: column;
+    gap: 12px;
+    align-items: stretch;
+  }
+  
+  .header-minimal > div {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+  }
+}
+
+
 
 
