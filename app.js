@@ -848,6 +848,16 @@ document.getElementById("btnAdminClose").addEventListener("click", () => {
   adminModal.classList.add("hidden");
 });
 
+const leaderboardModal = document.getElementById("leaderboardModal");
+document.getElementById("btnViewLeaderboard").addEventListener("click", () => {
+  SoundEffects.click();
+  leaderboardModal.classList.remove("hidden");
+});
+document.getElementById("btnLeaderboardClose").addEventListener("click", () => {
+  SoundEffects.click();
+  leaderboardModal.classList.add("hidden");
+});
+
 // Victory screen Play Again
 document.getElementById("btnPlayAgain").addEventListener("click", () => {
   SoundEffects.click();
@@ -1037,6 +1047,7 @@ function listenToLeaderboard() {
     });
     
     renderLeaderboardTable(usersList);
+    renderStudentLeaderboardTable(usersList);
   });
 }
 
@@ -1062,6 +1073,7 @@ function updateOfflineLeaderboard() {
   });
   
   renderLeaderboardTable(usersList);
+  renderStudentLeaderboardTable(usersList);
 }
 
 function renderLeaderboardTable(usersList) {
@@ -1098,6 +1110,41 @@ function renderLeaderboardTable(usersList) {
       <td>
         <button class="btn-delete" onclick="deleteUser('${user.username.toLowerCase()}')">Hapus 🗑️</button>
       </td>
+    `;
+    tbody.appendChild(tr);
+  });
+}
+
+function renderStudentLeaderboardTable(usersList) {
+  const tbody = document.getElementById("studentLeaderboardTableBody");
+  if (!tbody) return;
+  tbody.innerHTML = "";
+  
+  if (usersList.length === 0) {
+    tbody.innerHTML = `<tr><td colspan="5" style="text-align: center; color: var(--text-muted); padding: 20px;">Belum ada siswa yang bergabung / mengerjakan kuis.</td></tr>`;
+    return;
+  }
+  
+  usersList.forEach((user, index) => {
+    const rank = index + 1;
+    let rankBadgeClass = "rank-other";
+    if (rank === 1) rankBadgeClass = "rank-1";
+    else if (rank === 2) rankBadgeClass = "rank-2";
+    else if (rank === 3) rankBadgeClass = "rank-3";
+    
+    let timeStr = "-";
+    if (user.lastSolvedTimestamp) {
+      const date = new Date(user.lastSolvedTimestamp);
+      timeStr = date.toLocaleTimeString("id-ID");
+    }
+    
+    const tr = document.createElement("tr");
+    tr.innerHTML = `
+      <td><span class="rank-badge ${rankBadgeClass}">${rank}</span></td>
+      <td style="font-weight: 700; color: var(--text-primary);">${user.username}</td>
+      <td style="color: var(--neon-cyan); font-weight: bold;">${user.score || 0} PTS</td>
+      <td>${user.solvedCount || 0} / ${questions.length}</td>
+      <td style="font-family: monospace; color: var(--text-secondary); font-size: 0.85rem;">${timeStr}</td>
     `;
     tbody.appendChild(tr);
   });

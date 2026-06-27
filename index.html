@@ -30,14 +30,13 @@
   <div id="loginScreen" class="login-overlay">
     <div class="login-card">
       <div class="login-logo">
-        <span class="logo-glow">STATS</span>
-        <span class="logo-champs">CHAMPIONS</span>
-        <span class="logo-subtitle">ARENA KUIS MTK & STATISTIKA</span>
+        <span class="logo-subtitle">KUIS MTK & STATISTIKA</span>
       </div>
       <p class="login-desc">Masukkan nama/username Anda untuk bergabung ke kuis statistika</p>
       <form id="loginForm" autocomplete="off" onsubmit="return false;">
         <div class="input-group">
-          <input type="text" id="loginUsernameInput" class="custom-input" placeholder="Ketik nama Anda di sini..." required>
+          <input type="text" id="loginUsernameInput" class="custom-input" placeholder="Ketik nama Anda di sini..."
+            required>
           <span class="input-glow-bar"></span>
         </div>
         <button type="submit" class="btn-neon btn-purple btn-large btn-full" style="margin-top: 20px;">
@@ -56,9 +55,14 @@
         <span id="userNameDisplay" class="user-name">Guest</span>
         <button id="btnLogout" class="btn-logout-icon" title="Keluar / Ganti Akun">🚪</button>
       </div>
-      <button id="btnAdmin" class="btn-neon btn-purple hidden">
-        <span class="btn-glow-icon">🛠️</span> Kelola Soal
-      </button>
+      <div style="display: flex; gap: 10px;">
+        <button id="btnViewLeaderboard" class="btn-neon btn-gold">
+          <span class="btn-glow-icon">🏆</span> Leaderboard
+        </button>
+        <button id="btnAdmin" class="btn-neon btn-purple hidden">
+          <span class="btn-glow-icon">🛠️</span> Kelola Soal
+        </button>
+      </div>
     </div>
 
     <main class="game-main">
@@ -109,6 +113,32 @@
     </div>
   </div>
 
+  <!-- Modal: Leaderboard (Untuk Semua Siswa) -->
+  <div id="leaderboardModal" class="modal-overlay hidden">
+    <div class="modal-card">
+      <button class="modal-close" id="btnLeaderboardClose">&times;</button>
+      <h2 class="modal-title neon-text-purple">🏆 LEADERBOARD SISWA 🏆</h2>
+      <div class="modal-body">
+        <div class="questions-list-wrapper">
+          <table class="questions-table">
+            <thead>
+              <tr>
+                <th>Peringkat</th>
+                <th>Nama Siswa</th>
+                <th>Skor (PTS)</th>
+                <th>Soal Terjawab</th>
+                <th>Waktu Penyelesaian / Terakhir Solved</th>
+              </tr>
+            </thead>
+            <tbody id="studentLeaderboardTableBody">
+              <!-- Leaderboard rows will be generated here -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <!-- Modal: Kelola Soal (Tutor Admin Panel) -->
   <div id="adminModal" class="modal-overlay hidden">
     <div class="modal-card admin-card">
@@ -144,7 +174,8 @@
           </div>
         </div>
         <div style="display: flex; justify-content: flex-start; margin-top: 15px;">
-          <button type="submit" class="btn-neon btn-purple btn-medium" style="width: auto; min-width: 180px;">Tambah Soal ➕</button>
+          <button type="submit" class="btn-neon btn-purple btn-medium" style="width: auto; min-width: 180px;">Tambah
+            Soal ➕</button>
         </div>
       </form>
 
@@ -172,11 +203,15 @@
 
       <!-- Leaderboard Section (Admin Only) -->
       <div class="active-questions-section" style="margin-top: 30px;">
-        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; border-bottom: 1px solid rgba(255, 255, 255, 0.1); padding-bottom: 10px;">
-          <h3 class="form-section-title" style="margin-bottom: 0; border-bottom: none; padding-bottom: 0;">Leaderboard Siswa 🏆</h3>
+        <div
+          style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; border-bottom: 1px solid rgba(255, 255, 255, 0.1); padding-bottom: 10px;">
+          <h3 class="form-section-title" style="margin-bottom: 0; border-bottom: none; padding-bottom: 0;">Leaderboard
+            Siswa 🏆</h3>
           <div style="display: flex; gap: 10px;">
-            <button id="btnClearLeaderboard" class="btn-neon btn-red btn-medium" style="width: auto; padding: 6px 12px; font-size: 0.8rem;">Hapus Semua User 🧹</button>
-            <button id="btnResetGameStats" class="btn-neon btn-gold btn-medium" style="width: auto; padding: 6px 12px; font-size: 0.8rem;">Reset Status Soal 🔄</button>
+            <button id="btnClearLeaderboard" class="btn-neon btn-red btn-medium"
+              style="width: auto; padding: 6px 12px; font-size: 0.8rem;">Hapus Semua User 🧹</button>
+            <button id="btnResetGameStats" class="btn-neon btn-gold btn-medium"
+              style="width: auto; padding: 6px 12px; font-size: 0.8rem;">Reset Status Soal 🔄</button>
           </div>
         </div>
         <div class="questions-list-wrapper">
