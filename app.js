@@ -35,24 +35,55 @@ const PRELOADED_QUESTIONS = [
   },
   {
     id: 2,
-    category: "Penyebaran Data",
-    points: 200,
-    question: `<p>Diketahui data nilai ujian 10 siswa sebagai berikut:</p>
-<div class="data-box">60, 64, 68, 70, 73, 76, 79, 82, 86, 92</div>
-<p style="margin-top: 15px;">Tentukan:</p>
-<ol style="margin-left: 20px; margin-top: 5px;">
-  <li>Range (jangkauan) data</li>
-  <li>Standar deviasi sampel</li>
-</ol>`,
-    questionPreview: "Tentukan Range (jangkauan) dan Standar deviasi sampel dari data ujian 10 siswa.",
+    category: "Indeks Harga",
+    points: 300,
+    question: `<p>Diberikan data harga dan kuantitas dari 3 jenis barang kebutuhan pokok:</p>
+<div class="table-responsive">
+  <table class="quiz-table">
+    <thead>
+      <tr>
+        <th>Barang</th>
+        <th>Price 2024 (P₀)</th>
+        <th>Price 2025 (Pₙ)</th>
+        <th>Qty 2024 (Q₀)</th>
+        <th>Qty 2025 (Qₙ)</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td>Beras (A)</td><td>2000</td><td>2500</td><td>50</td><td>60</td></tr>
+      <tr><td>Minyak (B)</td><td>3000</td><td>3600</td><td>100</td><td>110</td></tr>
+      <tr><td>Gula (C)</td><td>5000</td><td>5500</td><td>40</td><td>35</td></tr>
+    </tbody>
+  </table>
+</div>
+<p style="margin-top: 15px;">Hitunglah nilai: (1) Indeks Laspeyres dan (2) Indeks Paasche dari data di atas!</p>`,
+    questionPreview: "Hitung Indeks Laspeyres dan Indeks Paasche dari data harga 3 jenis barang.",
     inputs: [
-      { label: "a) Range (Jangkauan)", type: "text", correctAnswer: "32" },
-      { label: "b) Standar Deviasi Sampel", type: "text", correctAnswer: "10" }
+      { label: "1) Indeks Laspeyres (IL)", type: "text", correctAnswer: "117.5" },
+      { label: "2) Indeks Paasche (IP)", type: "text", correctAnswer: "118.16" }
     ],
     solved: false
   },
   {
     id: 3,
+    category: "Penyebaran Data",
+    points: 200,
+    question: `<p>Diberikan sampel data berat badan (kg) dari 10 ekor hewan piaraan:</p>
+<div class="data-box">45, 48, 50, 50, 52, 55, 55, 58, 60, 67</div>
+<p style="margin-top: 15px;">Tentukan nilai:</p>
+<ol style="margin-left: 20px; margin-top: 5px;">
+  <li>Range (jangkauan) data</li>
+  <li>Standar deviasi sampel</li>
+</ol>`,
+    questionPreview: "Hitung Range dan Standar deviasi sampel berat badan 10 hewan piaraan.",
+    inputs: [
+      { label: "a) Range (Jangkauan)", type: "text", correctAnswer: "22" },
+      { label: "b) Standar Deviasi Sampel", type: "text", correctAnswer: "6.46" }
+    ],
+    solved: false
+  },
+  {
+    id: 4,
     category: "Pemusatan Data",
     points: 200,
     question: `<p>Diberikan data kelompok distribusi frekuensi waktu pengerjaan tugas (menit) dari 30 siswa:</p>
@@ -83,25 +114,74 @@ const PRELOADED_QUESTIONS = [
     solved: false
   },
   {
-    id: 4,
+    id: 5,
     category: "Penyebaran Data",
     points: 200,
-    question: `<p>Diberikan sampel data berat badan (kg) dari 10 ekor hewan piaraan:</p>
-<div class="data-box">45, 48, 50, 50, 52, 55, 55, 58, 60, 67</div>
-<p style="margin-top: 15px;">Tentukan nilai:</p>
+    question: `<p>Hasil pengamatan suhu ruangan (dalam °C) pada 10 titik berbeda adalah sebagai berikut:</p>
+<div class="data-box">22, 23, 24, 24, 25, 26, 26, 27, 28, 30</div>
+<p style="margin-top: 15px;">Hitunglah nilai:</p>
 <ol style="margin-left: 20px; margin-top: 5px;">
-  <li>Range (jangkauan) data</li>
-  <li>Standar deviasi sampel</li>
+  <li>Range (jangkauan) suhu</li>
+  <li>Standar deviasi sampel suhu</li>
 </ol>`,
-    questionPreview: "Hitung Range dan Standar deviasi sampel berat badan 10 hewan piaraan.",
+    questionPreview: "Tentukan Range dan Standar deviasi sampel dari 10 titik suhu ruangan.",
     inputs: [
-      { label: "a) Range (Jangkauan)", type: "text", correctAnswer: "22" },
-      { label: "b) Standar Deviasi Sampel", type: "text", correctAnswer: "6.46" }
+      { label: "a) Range (Jangkauan)", type: "text", correctAnswer: "8" },
+      { label: "b) Standar Deviasi Sampel", type: "text", correctAnswer: "2.42" }
     ],
     solved: false
   },
   {
-    id: 5,
+    id: 6,
+    category: "Indeks Harga",
+    points: 300,
+    question: `<p>Tabel berikut menunjukkan harga dan kuantitas konsumsi sayuran suatu keluarga pada tahun dasar dan tahun berjalan:</p>
+<div class="table-responsive">
+  <table class="quiz-table">
+    <thead>
+      <tr>
+        <th>Sayuran</th>
+        <th>Harga Dasar (P₀)</th>
+        <th>Harga Berjalan (Pₙ)</th>
+        <th>Qty Dasar (Q₀)</th>
+        <th>Qty Berjalan (Qₙ)</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td>Kentang</td><td>8000</td><td>10000</td><td>20</td><td>25</td></tr>
+      <tr><td>Wortel</td><td>6000</td><td>7500</td><td>30</td><td>28</td></tr>
+      <tr><td>Tomat</td><td>12000</td><td>14000</td><td>15</td><td>18</td></tr>
+    </tbody>
+  </table>
+</div>
+<p style="margin-top: 15px;">Tentukan nilai: (1) Indeks Laspeyres dan (2) Indeks Paasche dari data di atas!</p>`,
+    questionPreview: "Tentukan nilai Indeks Laspeyres dan Indeks Paasche dari konsumsi sayuran.",
+    inputs: [
+      { label: "1) Indeks Laspeyres (IL)", type: "text", correctAnswer: "122.12" },
+      { label: "2) Indeks Paasche (IP)", type: "text", correctAnswer: "121.92" }
+    ],
+    solved: false
+  },
+  {
+    id: 7,
+    category: "Penyebaran Data",
+    points: 200,
+    question: `<p>Data berikut adalah waktu tunggu layanan pelanggan (dalam menit) di loket pos dari 10 customer:</p>
+<div class="data-box">8, 10, 12, 14, 15, 16, 18, 20, 22, 25</div>
+<p style="margin-top: 15px;">Tentukan nilai:</p>
+<ol style="margin-left: 20px; margin-top: 5px;">
+  <li>Range (jangkauan) waktu</li>
+  <li>Standar deviasi sampel waktu</li>
+</ol>`,
+    questionPreview: "Tentukan Range dan Standar deviasi sampel waktu tunggu 10 customer.",
+    inputs: [
+      { label: "a) Range (Jangkauan)", type: "text", correctAnswer: "17" },
+      { label: "b) Standar Deviasi Sampel", type: "text", correctAnswer: "5.35" }
+    ],
+    solved: false
+  },
+  {
+    id: 8,
     category: "Pemusatan Data",
     points: 200,
     question: `<p>Tabel distribusi frekuensi tinggi tanaman hias (cm) setelah 1 bulan:</p>
@@ -132,247 +212,33 @@ const PRELOADED_QUESTIONS = [
     solved: false
   },
   {
-    id: 6,
-    category: "Penyebaran Data",
-    points: 200,
-    question: `<p>Hasil pengamatan suhu ruangan (dalam °C) pada 10 titik berbeda adalah sebagai berikut:</p>
-<div class="data-box">22, 23, 24, 24, 25, 26, 26, 27, 28, 30</div>
-<p style="margin-top: 15px;">Hitunglah nilai:</p>
-<ol style="margin-left: 20px; margin-top: 5px;">
-  <li>Range (jangkauan) suhu</li>
-  <li>Standar deviasi sampel suhu</li>
-</ol>`,
-    questionPreview: "Tentukan Range dan Standar deviasi sampel dari 10 titik suhu ruangan.",
-    inputs: [
-      { label: "a) Range (Jangkauan)", type: "text", correctAnswer: "8" },
-      { label: "b) Standar Deviasi Sampel", type: "text", correctAnswer: "2.42" }
-    ],
-    solved: false
-  },
-  {
-    id: 7,
-    category: "Pemusatan Data",
-    points: 200,
-    question: `<p>Data nilai tes seleksi masuk dari 20 peserta ujian:</p>
-<div class="table-responsive">
-  <table class="quiz-table">
-    <thead>
-      <tr>
-        <th>Rentang Nilai</th>
-        <th>Frekuensi (f)</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr><td>60 - 69</td><td>3</td></tr>
-      <tr><td>70 - 79</td><td>6</td></tr>
-      <tr><td>80 - 89</td><td>10</td></tr>
-      <tr><td>90 - 99</td><td>1</td></tr>
-    </tbody>
-  </table>
-</div>
-<p style="margin-top: 15px;">Hitung nilai: (1) Mean, (2) Median, dan (3) Modus dari nilai tes seleksi tersebut!</p>`,
-    questionPreview: "Tentukan Mean, Median, dan Modus nilai tes masuk dari 20 peserta.",
-    inputs: [
-      { label: "1) Mean (Rata-rata)", type: "text", correctAnswer: "79.0" },
-      { label: "2) Median", type: "text", correctAnswer: "80.5" },
-      { label: "3) Modus", type: "text", correctAnswer: "82.58" }
-    ],
-    solved: false
-  },
-  {
-    id: 8,
-    category: "Penyebaran Data",
-    points: 200,
-    question: `<p>Data berikut adalah waktu tunggu layanan pelanggan (dalam menit) di loket pos dari 10 customer:</p>
-<div class="data-box">8, 10, 12, 14, 15, 16, 18, 20, 22, 25</div>
-<p style="margin-top: 15px;">Tentukan nilai:</p>
-<ol style="margin-left: 20px; margin-top: 5px;">
-  <li>Range (jangkauan) waktu</li>
-  <li>Standar deviasi sampel waktu</li>
-</ol>`,
-    questionPreview: "Tentukan Range dan Standar deviasi sampel waktu tunggu 10 customer.",
-    inputs: [
-      { label: "a) Range (Jangkauan)", type: "text", correctAnswer: "17" },
-      { label: "b) Standar Deviasi Sampel", type: "text", correctAnswer: "5.35" }
-    ],
-    solved: false
-  },
-  {
     id: 9,
-    category: "Pemusatan Data",
-    points: 200,
-    question: `<p>Berikut adalah tabel data kelompok pengeluaran harian 50 keluarga (dalam ribuan Rupiah):</p>
+    category: "Indeks Harga",
+    points: 300,
+    question: `<p>Tabel berikut menyajikan harga dan kuantitas dari alat tulis kantor (ATK) pada 2 tahun yang berbeda:</p>
 <div class="table-responsive">
   <table class="quiz-table">
     <thead>
       <tr>
-        <th>Pengeluaran (Ribu Rp)</th>
-        <th>Frekuensi (f)</th>
+        <th>Barang</th>
+        <th>Harga 2024 (P₀)</th>
+        <th>Harga 2025 (Pₙ)</th>
+        <th>Qty 2024 (Q₀)</th>
+        <th>Qty 2025 (Qₙ)</th>
       </tr>
     </thead>
     <tbody>
-      <tr><td>100 - 119</td><td>5</td></tr>
-      <tr><td>120 - 139</td><td>15</td></tr>
-      <tr><td>140 - 159</td><td>20</td></tr>
-      <tr><td>160 - 179</td><td>8</td></tr>
-      <tr><td>180 - 199</td><td>2</td></tr>
+      <tr><td>Buku</td><td>15000</td><td>18000</td><td>10</td><td>12</td></tr>
+      <tr><td>Pensil</td><td>4000</td><td>5000</td><td>25</td><td>20</td></tr>
+      <tr><td>Penggaris</td><td>8000</td><td>10000</td><td>15</td><td>15</td></tr>
     </tbody>
   </table>
 </div>
-<p style="margin-top: 15px;">Tentukan: (1) Mean, (2) Median, dan (3) Modus pengeluaran harian tersebut!</p>`,
-    questionPreview: "Tentukan Mean, Median, dan Modus tabel pengeluaran harian 50 keluarga.",
+<p style="margin-top: 15px;">Tentukan: (1) Indeks Laspeyres dan (2) Indeks Paasche dari data ATK tersebut!</p>`,
+    questionPreview: "Tentukan Indeks Laspeyres dan Indeks Paasche dari data ATK sekolah.",
     inputs: [
-      { label: "1) Mean (Rata-rata)", type: "text", correctAnswer: "144.3" },
-      { label: "2) Median", type: "text", correctAnswer: "144.5" },
-      { label: "3) Modus", type: "text", correctAnswer: "145.38" }
-    ],
-    solved: false
-  },
-  {
-    id: 10,
-    category: "Penyebaran Data",
-    points: 200,
-    question: `<p>Diberikan data nilai skor kuis mingguan dari 10 siswa les privat:</p>
-<div class="data-box">5, 6, 6, 7, 7, 8, 8, 9, 9, 10</div>
-<p style="margin-top: 15px;">Tentukan:</p>
-<ol style="margin-left: 20px; margin-top: 5px;">
-  <li>Range (jangkauan) skor</li>
-  <li>Standar deviasi sampel skor</li>
-</ol>`,
-    questionPreview: "Tentukan Range dan Standar deviasi sampel dari skor kuis 10 siswa.",
-    inputs: [
-      { label: "a) Range (Jangkauan)", type: "text", correctAnswer: "5" },
-      { label: "b) Standar Deviasi Sampel", type: "text", correctAnswer: "1.58" }
-    ],
-    solved: false
-  },
-  {
-    id: 11,
-    category: "Pemusatan Data",
-    points: 200,
-    question: `<p>Tabel distribusi frekuensi nilai matematika dari 50 siswa kelas A:</p>
-<div class="table-responsive">
-  <table class="quiz-table">
-    <thead>
-      <tr>
-        <th>Interval Nilai</th>
-        <th>Frekuensi (f)</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr><td>31 - 40</td><td>4</td></tr>
-      <tr><td>41 - 50</td><td>6</td></tr>
-      <tr><td>51 - 60</td><td>9</td></tr>
-      <tr><td>61 - 70</td><td>14</td></tr>
-      <tr><td>71 - 80</td><td>10</td></tr>
-      <tr><td>81 - 90</td><td>7</td></tr>
-    </tbody>
-  </table>
-</div>
-<p style="margin-top: 15px;">Hitunglah nilai: (1) Mean, (2) Median, dan (3) Modus nilai matematika tersebut!</p>`,
-    questionPreview: "Tentukan Mean, Median, dan Modus dari data kelompok nilai matematika 50 siswa.",
-    inputs: [
-      { label: "1) Mean (Rata-rata)", type: "text", correctAnswer: "63.7" },
-      { label: "2) Median", type: "text", correctAnswer: "64.79" },
-      { label: "3) Modus", type: "text", correctAnswer: "66.06" }
-    ],
-    solved: false
-  },
-  {
-    id: 12,
-    category: "Penyebaran Data",
-    points: 200,
-    question: `<p>Pengukuran waktu respon sistem (dalam milidetik) pada 10 kali server request:</p>
-<div class="data-box">35, 38, 42, 45, 48, 50, 52, 55, 60, 65</div>
-<p style="margin-top: 15px;">Tentukan nilai:</p>
-<ol style="margin-left: 20px; margin-top: 5px;">
-  <li>Range (jangkauan) respon</li>
-  <li>Standar deviasi sampel respon</li>
-</ol>`,
-    questionPreview: "Tentukan Range dan Standar deviasi sampel waktu respon request server (10 request).",
-    inputs: [
-      { label: "a) Range (Jangkauan)", type: "text", correctAnswer: "30" },
-      { label: "b) Standar Deviasi Sampel", type: "text", correctAnswer: "9.55" }
-    ],
-    solved: false
-  },
-  {
-    id: 13,
-    category: "Pemusatan Data",
-    points: 200,
-    question: `<p>Tabel frekuensi tingkat kesalahan ketik (typo) per halaman buku:</p>
-<div class="table-responsive">
-  <table class="quiz-table">
-    <thead>
-      <tr>
-        <th>Jumlah Typo</th>
-        <th>Frekuensi (f)</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr><td>1 - 5</td><td>4</td></tr>
-      <tr><td>6 - 10</td><td>5</td></tr>
-      <tr><td>11 - 15</td><td>8</td></tr>
-      <tr><td>16 - 20</td><td>2</td></tr>
-      <tr><td>21 - 25</td><td>1</td></tr>
-    </tbody>
-  </table>
-</div>
-<p style="margin-top: 15px;">Hitunglah nilai: (1) Mean, (2) Median, dan (3) Modus typo!</p>`,
-    questionPreview: "Tentukan Mean, Median, dan Modus dari data kelompok frekuensi typo.",
-    inputs: [
-      { label: "1) Mean (Rata-rata)", type: "text", correctAnswer: "10.75" },
-      { label: "2) Median", type: "text", correctAnswer: "11.13" },
-      { label: "3) Modus", type: "text", correctAnswer: "12.17" }
-    ],
-    solved: false
-  },
-  {
-    id: 14,
-    category: "Penyebaran Data",
-    points: 200,
-    question: `<p>Sampel jumlah produksi roti harian (buah) di sebuah toko roti mini selama 10 hari:</p>
-<div class="data-box">20, 22, 25, 28, 30, 32, 35, 38, 40, 45</div>
-<p style="margin-top: 15px;">Tentukan nilai:</p>
-<ol style="margin-left: 20px; margin-top: 5px;">
-  <li>Range (jangkauan) produksi</li>
-  <li>Standar deviasi sampel produksi</li>
-</ol>`,
-    questionPreview: "Tentukan Range dan Standar deviasi sampel jumlah produksi roti harian (10 hari).",
-    inputs: [
-      { label: "a) Range (Jangkauan)", type: "text", correctAnswer: "25" },
-      { label: "b) Standar Deviasi Sampel", type: "text", correctAnswer: "8.09" }
-    ],
-    solved: false
-  },
-  {
-    id: 15,
-    category: "Pemusatan Data",
-    points: 200,
-    question: `<p>Data kelompok tinggi badan (cm) 40 calon taruna akademi militer:</p>
-<div class="table-responsive">
-  <table class="quiz-table">
-    <thead>
-      <tr>
-        <th>Tinggi (cm)</th>
-        <th>Frekuensi (f)</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr><td>150 - 154</td><td>5</td></tr>
-      <tr><td>155 - 159</td><td>10</td></tr>
-      <tr><td>160 - 164</td><td>15</td></tr>
-      <tr><td>165 - 169</td><td>8</td></tr>
-      <tr><td>170 - 174</td><td>2</td></tr>
-    </tbody>
-  </table>
-</div>
-<p style="margin-top: 15px;">Hitunglah nilai: (1) Mean, (2) Median, dan (3) Modus tinggi badan tersebut!</p>`,
-    questionPreview: "Tentukan Mean, Median, dan Modus tinggi badan kelompok 40 calon taruna.",
-    inputs: [
-      { label: "1) Mean (Rata-rata)", type: "text", correctAnswer: "161" },
-      { label: "2) Median", type: "text", correctAnswer: "161.17" },
-      { label: "3) Modus", type: "text", correctAnswer: "161.58" }
+      { label: "1) Indeks Laspeyres (IL)", type: "text", correctAnswer: "122.97" },
+      { label: "2) Indeks Paasche (IP)", type: "text", correctAnswer: "122.63" }
     ],
     solved: false
   }
@@ -381,6 +247,11 @@ const PRELOADED_QUESTIONS = [
 // App State
 let questions = [];
 let activeQuestionId = null;
+
+// User Profile state
+let currentUser = null; // { username, role, score, solvedQuestions }
+let db = null; // Firebase database reference
+let firebaseConnected = false;
 
 // Audio Context Lazily Synthesized
 let audioCtx = null;
@@ -635,7 +506,7 @@ function checkAnswer(userVal, correctVal) {
 function loadQuestions() {
   let saved = null;
   try {
-    saved = localStorage.getItem("stats_quiz_questions_v4");
+    saved = localStorage.getItem("stats_quiz_questions_v5");
   } catch (e) {
     console.warn("localStorage is not accessible (likely running on file:// protocol). Using in-memory fallback.");
   }
@@ -653,10 +524,14 @@ function loadQuestions() {
 }
 
 function saveQuestionsToStorage() {
-  try {
-    localStorage.setItem("stats_quiz_questions_v4", JSON.stringify(questions));
-  } catch (e) {
-    console.warn("localStorage is not accessible. Progress will not be saved.");
+  if (firebaseConnected && db) {
+    db.ref("questions").set(questions);
+  } else {
+    try {
+      localStorage.setItem("stats_quiz_questions_v5", JSON.stringify(questions));
+    } catch (e) {
+      console.warn("localStorage is not accessible. Progress will not be saved.");
+    }
   }
 }
 
@@ -665,7 +540,17 @@ function renderBoard() {
   const boardEl = document.getElementById("quizBoard");
   boardEl.innerHTML = "";
 
-  const unsolvedQuestions = questions.filter(q => !q.solved);
+  if (questions.length === 0) {
+    boardEl.innerHTML = `<div style="grid-column: span 3; text-align: center; color: var(--text-muted); padding: 50px; font-size: 1.2rem;">Belum ada soal kuis aktif di papan. Silakan hubungi tutor/admin.</div>`;
+    boardEl.classList.remove("hidden");
+    document.getElementById("victoryScreen").classList.add("hidden");
+    return;
+  }
+
+  const unsolvedQuestions = questions.filter(q => {
+    if (!currentUser) return true;
+    return !currentUser.solvedQuestions || !currentUser.solvedQuestions[q.id];
+  });
 
   if (unsolvedQuestions.length === 0) {
     // Show victory screen
@@ -814,15 +699,13 @@ function triggerFeedback(isCorrect) {
       screenGlow.className = "screen-glow";
       feedbackBanner.className = "feedback-banner";
 
-      // Mark as solved
-      const qIndex = questions.findIndex(item => item.id === activeQuestionId);
-      if (qIndex !== -1) {
-        questions[qIndex].solved = true;
-        saveQuestionsToStorage();
+      // Mark as solved for this student
+      const activeQ = questions.find(item => item.id === activeQuestionId);
+      if (activeQ && currentUser) {
+        markQuestionSolvedForUser(currentUser.username, activeQuestionId, activeQ.points);
       }
 
       closeQuestionModal();
-      renderBoard();
     }, 1500);
 
   } else {
@@ -968,9 +851,33 @@ document.getElementById("btnAdminClose").addEventListener("click", () => {
 // Victory screen Play Again
 document.getElementById("btnPlayAgain").addEventListener("click", () => {
   SoundEffects.click();
-  questions.forEach(q => q.solved = false);
-  saveQuestionsToStorage();
-  renderBoard();
+  if (currentUser) {
+    const usernameKey = currentUser.username.toLowerCase();
+    if (firebaseConnected && db) {
+      db.ref("users/" + usernameKey + "/solvedQuestions").remove();
+      db.ref("users/" + usernameKey + "/score").set(0);
+      db.ref("users/" + usernameKey + "/solvedCount").set(0);
+      db.ref("users/" + usernameKey + "/lastSolvedTimestamp").set(Date.now());
+    } else {
+      let localUsers = {};
+      try {
+        const saved = localStorage.getItem("stats_quiz_local_users");
+        if (saved) localUsers = JSON.parse(saved);
+        if (localUsers[usernameKey]) {
+          localUsers[usernameKey].solvedQuestions = {};
+          localUsers[usernameKey].score = 0;
+          localUsers[usernameKey].solvedCount = 0;
+          localUsers[usernameKey].lastSolvedTimestamp = Date.now();
+          localStorage.setItem("stats_quiz_local_users", JSON.stringify(localUsers));
+          
+          currentUser = localUsers[usernameKey];
+          localStorage.setItem("stats_quiz_current_user", JSON.stringify(currentUser));
+        }
+      } catch(e) {}
+      renderBoard();
+      updateOfflineLeaderboard();
+    }
+  }
 });
 
 // Submit answer verifier
@@ -1022,6 +929,469 @@ qForm.addEventListener("submit", (e) => {
   }
 });
 
+// --- Firebase Database Synchronization & Fallback ---
+function initFirebase() {
+  const isValidConfig = typeof firebaseConfig !== 'undefined' && 
+                        firebaseConfig.apiKey && 
+                        firebaseConfig.apiKey !== 'YOUR_API_KEY_HERE' &&
+                        firebaseConfig.databaseURL && 
+                        firebaseConfig.databaseURL !== 'YOUR_DATABASE_URL_HERE';
+  
+  const statusDot = document.getElementById("connectionStatus");
+
+  if (isValidConfig) {
+    try {
+      firebase.initializeApp(firebaseConfig);
+      db = firebase.database();
+      firebaseConnected = true;
+      
+      if (statusDot) {
+        statusDot.className = "status-dot online";
+        statusDot.title = "Mode Online (Database Firebase Terhubung)";
+      }
+      console.log("Firebase Realtime Database successfully initialized.");
+      
+      // Load questions from Firebase first, then trigger checkAuth once loaded
+      let isFirstLoad = true;
+      const qRef = db.ref("questions");
+      qRef.on("value", (snapshot) => {
+        const val = snapshot.val();
+        if (val) {
+          questions = Array.isArray(val) ? val.filter(Boolean) : Object.values(val);
+        } else {
+          console.log("Database is empty. Seeding with preloaded questions...");
+          qRef.set(PRELOADED_QUESTIONS);
+          questions = [...PRELOADED_QUESTIONS];
+        }
+        
+        // Render the board
+        renderBoard();
+        
+        // Trigger auth check ONLY on first load
+        if (isFirstLoad) {
+          isFirstLoad = false;
+          checkAuth();
+        }
+      });
+      
+      // Start listening to leaderboard (for admin screen)
+      listenToLeaderboard();
+      
+    } catch (e) {
+      console.error("Firebase failed to initialize: ", e);
+      fallbackToOfflineMode();
+    }
+  } else {
+    console.warn("Firebase configuration is not set or placeholder. Running in Offline Mode.");
+    fallbackToOfflineMode();
+  }
+}
+
+function fallbackToOfflineMode() {
+  firebaseConnected = false;
+  db = null;
+  const statusDot = document.getElementById("connectionStatus");
+  if (statusDot) {
+    statusDot.className = "status-dot offline";
+    statusDot.title = "Mode Offline (Menyimpan lokal di browser)";
+  }
+  
+  loadQuestions();
+  updateOfflineLeaderboard();
+  checkAuth();
+}
+
+function syncQuestionsFromFirebase() {
+  if (!firebaseConnected || !db) return;
+  const qRef = db.ref("questions");
+  qRef.on("value", (snapshot) => {
+    const val = snapshot.val();
+    if (val) {
+      questions = Array.isArray(val) ? val.filter(Boolean) : Object.values(val);
+      renderBoard();
+    }
+  });
+}
+
+function listenToLeaderboard() {
+  if (!firebaseConnected || !db) return;
+  
+  const usersRef = db.ref("users");
+  usersRef.on("value", (snapshot) => {
+    const val = snapshot.val();
+    const usersList = [];
+    if (val) {
+      Object.keys(val).forEach(key => {
+        if (key !== "admin") {
+          usersList.push(val[key]);
+        }
+      });
+    }
+    
+    // Sort: highest score first, then earliest lastSolvedTimestamp
+    usersList.sort((a, b) => {
+      if (b.score !== a.score) {
+        return b.score - a.score;
+      }
+      return (a.lastSolvedTimestamp || 0) - (b.lastSolvedTimestamp || 0);
+    });
+    
+    renderLeaderboardTable(usersList);
+  });
+}
+
+function updateOfflineLeaderboard() {
+  let localUsers = {};
+  try {
+    const saved = localStorage.getItem("stats_quiz_local_users");
+    if (saved) localUsers = JSON.parse(saved);
+  } catch(e) {}
+  
+  const usersList = [];
+  Object.keys(localUsers).forEach(key => {
+    if (key !== "admin") {
+      usersList.push(localUsers[key]);
+    }
+  });
+  
+  usersList.sort((a, b) => {
+    if (b.score !== a.score) {
+      return b.score - a.score;
+    }
+    return (a.lastSolvedTimestamp || 0) - (b.lastSolvedTimestamp || 0);
+  });
+  
+  renderLeaderboardTable(usersList);
+}
+
+function renderLeaderboardTable(usersList) {
+  const tbody = document.getElementById("adminLeaderboardTableBody");
+  if (!tbody) return;
+  tbody.innerHTML = "";
+  
+  if (usersList.length === 0) {
+    tbody.innerHTML = `<tr><td colspan="6" style="text-align: center; color: var(--text-muted); padding: 20px;">Belum ada siswa yang bergabung / mengerjakan kuis.</td></tr>`;
+    return;
+  }
+  
+  usersList.forEach((user, index) => {
+    const rank = index + 1;
+    let rankBadgeClass = "rank-other";
+    if (rank === 1) rankBadgeClass = "rank-1";
+    else if (rank === 2) rankBadgeClass = "rank-2";
+    else if (rank === 3) rankBadgeClass = "rank-3";
+    
+    // Format timestamp nicely (HH:MM:SS)
+    let timeStr = "-";
+    if (user.lastSolvedTimestamp) {
+      const date = new Date(user.lastSolvedTimestamp);
+      timeStr = date.toLocaleTimeString("id-ID");
+    }
+    
+    const tr = document.createElement("tr");
+    tr.innerHTML = `
+      <td><span class="rank-badge ${rankBadgeClass}">${rank}</span></td>
+      <td style="font-weight: 700; color: var(--text-primary);">${user.username}</td>
+      <td style="color: var(--neon-cyan); font-weight: bold;">${user.score || 0} PTS</td>
+      <td>${user.solvedCount || 0} / ${questions.length}</td>
+      <td style="font-family: monospace; color: var(--text-secondary); font-size: 0.85rem;">${timeStr}</td>
+      <td>
+        <button class="btn-delete" onclick="deleteUser('${user.username.toLowerCase()}')">Hapus 🗑️</button>
+      </td>
+    `;
+    tbody.appendChild(tr);
+  });
+}
+
+window.deleteUser = function(usernameKey) {
+  if (confirm(`Apakah Anda yakin ingin menghapus user ini dari leaderboard?`)) {
+    if (firebaseConnected && db) {
+      db.ref("users/" + usernameKey).remove();
+    } else {
+      let localUsers = {};
+      try {
+        const saved = localStorage.getItem("stats_quiz_local_users");
+        if (saved) localUsers = JSON.parse(saved);
+        delete localUsers[usernameKey];
+        localStorage.setItem("stats_quiz_local_users", JSON.stringify(localUsers));
+      } catch(e) {}
+      updateOfflineLeaderboard();
+    }
+  }
+};
+
+function markQuestionSolvedForUser(username, questionId, points) {
+  const usernameKey = username.toLowerCase();
+  
+  if (firebaseConnected && db) {
+    const userRef = db.ref("users/" + usernameKey);
+    userRef.once("value").then(snapshot => {
+      let userData = snapshot.val() || {
+        username: username,
+        score: 0,
+        solvedCount: 0,
+        lastSolvedTimestamp: 0,
+        solvedQuestions: {}
+      };
+      
+      if (!userData.solvedQuestions) userData.solvedQuestions = {};
+      
+      // If already solved, don't re-solve
+      if (userData.solvedQuestions[questionId]) return;
+      
+      userData.solvedQuestions[questionId] = true;
+      userData.score = (userData.score || 0) + points;
+      userData.solvedCount = (userData.solvedCount || 0) + 1;
+      userData.lastSolvedTimestamp = Date.now();
+      
+      // Update firebase
+      userRef.set(userData);
+      
+      // Update local state copy
+      currentUser = userData;
+      renderBoard();
+    });
+  } else {
+    // Offline fallback (localStorage)
+    let localUsers = {};
+    try {
+      const saved = localStorage.getItem("stats_quiz_local_users");
+      if (saved) localUsers = JSON.parse(saved);
+    } catch(e) {}
+    
+    let userData = localUsers[usernameKey] || {
+      username: username,
+      score: 0,
+      solvedCount: 0,
+      lastSolvedTimestamp: 0,
+      solvedQuestions: {}
+    };
+    
+    if (!userData.solvedQuestions) userData.solvedQuestions = {};
+    if (userData.solvedQuestions[questionId]) return;
+    
+    userData.solvedQuestions[questionId] = true;
+    userData.score = (userData.score || 0) + points;
+    userData.solvedCount = (userData.solvedCount || 0) + 1;
+    userData.lastSolvedTimestamp = Date.now();
+    
+    localUsers[usernameKey] = userData;
+    try {
+      localStorage.setItem("stats_quiz_local_users", JSON.stringify(localUsers));
+      localStorage.setItem("stats_quiz_current_user", JSON.stringify(userData));
+    } catch(e) {}
+    
+    currentUser = userData;
+    renderBoard();
+    updateOfflineLeaderboard();
+  }
+}
+
+// --- Authentication Flow ---
+const loginScreen = document.getElementById("loginScreen");
+const appContainer = document.getElementById("appContainer");
+const loginForm = document.getElementById("loginForm");
+const loginInput = document.getElementById("loginUsernameInput");
+const btnAdmin = document.getElementById("btnAdmin");
+const userNameDisplay = document.getElementById("userNameDisplay");
+const btnLogout = document.getElementById("btnLogout");
+
+function checkAuth() {
+  let userRaw = null;
+  try {
+    userRaw = localStorage.getItem("stats_quiz_current_user");
+  } catch (e) {
+    console.warn("localStorage is not accessible.");
+  }
+
+  if (userRaw) {
+    try {
+      const user = JSON.parse(userRaw);
+      loginUser(user.username);
+      return;
+    } catch (e) {}
+  }
+  showLogin();
+}
+
+function showLogin() {
+  loginScreen.classList.remove("hidden");
+  appContainer.classList.add("hidden");
+  loginInput.value = "";
+  setTimeout(() => loginInput.focus(), 150);
+}
+
+function showGame(username, role) {
+  loginScreen.classList.add("hidden");
+  appContainer.classList.remove("hidden");
+  
+  const displayName = username.charAt(0).toUpperCase() + username.slice(1);
+  userNameDisplay.textContent = displayName;
+  
+  if (role === "admin") {
+    btnAdmin.classList.remove("hidden");
+  } else {
+    btnAdmin.classList.add("hidden");
+  }
+  
+  renderBoard();
+}
+
+function loginUser(username) {
+  const usernameKey = username.toLowerCase();
+  
+  if (firebaseConnected && db) {
+    const userRef = db.ref("users/" + usernameKey);
+    userRef.once("value").then(snapshot => {
+      let userData = snapshot.val();
+      if (!userData) {
+        userData = {
+          username: username,
+          score: 0,
+          solvedCount: 0,
+          lastSolvedTimestamp: Date.now(),
+          solvedQuestions: {}
+        };
+        userRef.set(userData);
+      }
+      
+      currentUser = userData;
+      try {
+        localStorage.setItem("stats_quiz_current_user", JSON.stringify(userData));
+      } catch (e) {}
+      
+      // Attach live listener for student profile
+      userRef.on("value", (snap) => {
+        const val = snap.val();
+        if (!val) {
+          // If deleted by admin, logout
+          logoutUserSilent();
+          return;
+        }
+        currentUser = val;
+        renderBoard();
+      });
+      
+      showGame(username, usernameKey === "admin" ? "admin" : "student");
+    });
+  } else {
+    // Offline mode
+    let localUsers = {};
+    try {
+      const saved = localStorage.getItem("stats_quiz_local_users");
+      if (saved) localUsers = JSON.parse(saved);
+    } catch(e) {}
+    
+    let userData = localUsers[usernameKey];
+    if (!userData) {
+      userData = {
+        username: username,
+        score: 0,
+        solvedCount: 0,
+        lastSolvedTimestamp: Date.now(),
+        solvedQuestions: {}
+      };
+      localUsers[usernameKey] = userData;
+      try {
+        localStorage.setItem("stats_quiz_local_users", JSON.stringify(localUsers));
+      } catch(e) {}
+    }
+    
+    currentUser = userData;
+    try {
+      localStorage.setItem("stats_quiz_current_user", JSON.stringify(userData));
+    } catch(e) {}
+    
+    showGame(username, usernameKey === "admin" ? "admin" : "student");
+    updateOfflineLeaderboard();
+  }
+}
+
+function logoutUserSilent() {
+  currentUser = null;
+  try {
+    localStorage.removeItem("stats_quiz_current_user");
+  } catch(e) {}
+  showLogin();
+}
+
+// Login Submit
+loginForm.addEventListener("submit", (e) => {
+  e.preventDefault();
+  const username = loginInput.value.trim();
+  if (!username) return;
+  
+  SoundEffects.click();
+  loginUser(username);
+});
+
+// Logout Click
+btnLogout.addEventListener("click", () => {
+  SoundEffects.click();
+  if (firebaseConnected && db && currentUser) {
+    db.ref("users/" + currentUser.username.toLowerCase()).off();
+  }
+  logoutUserSilent();
+});
+
+// Clear Leaderboard (Delete all users)
+const btnClearLeaderboard = document.getElementById("btnClearLeaderboard");
+if (btnClearLeaderboard) {
+  btnClearLeaderboard.addEventListener("click", () => {
+    if (confirm("Apakah Anda yakin ingin menghapus SEMUA user dari database leaderboard? Progres mereka akan hilang.")) {
+      if (firebaseConnected && db) {
+        db.ref("users").remove();
+      } else {
+        try {
+          localStorage.removeItem("stats_quiz_local_users");
+          localStorage.removeItem("stats_quiz_current_user");
+        } catch(e) {}
+        updateOfflineLeaderboard();
+      }
+      SoundEffects.success();
+    }
+  });
+}
+
+// Reset Game Stats (Reset solved status of all questions for all active users)
+const btnResetGameStats = document.getElementById("btnResetGameStats");
+if (btnResetGameStats) {
+  btnResetGameStats.addEventListener("click", () => {
+    if (confirm("Apakah Anda yakin ingin mereset status soal (skor dan progres) seluruh siswa kembali ke 0?")) {
+      if (firebaseConnected && db) {
+        db.ref("users").once("value").then(snapshot => {
+          const val = snapshot.val();
+          if (val) {
+            const updates = {};
+            Object.keys(val).forEach(key => {
+              updates[`users/${key}/score`] = 0;
+              updates[`users/${key}/solvedCount`] = 0;
+              updates[`users/${key}/lastSolvedTimestamp`] = Date.now();
+              updates[`users/${key}/solvedQuestions`] = {};
+            });
+            db.ref().update(updates);
+          }
+        });
+      } else {
+        let localUsers = {};
+        try {
+          const saved = localStorage.getItem("stats_quiz_local_users");
+          if (saved) localUsers = JSON.parse(saved);
+          
+          Object.keys(localUsers).forEach(key => {
+            localUsers[key].score = 0;
+            localUsers[key].solvedCount = 0;
+            localUsers[key].lastSolvedTimestamp = Date.now();
+            localUsers[key].solvedQuestions = {};
+          });
+          localStorage.setItem("stats_quiz_local_users", JSON.stringify(localUsers));
+        } catch(e) {}
+        updateOfflineLeaderboard();
+      }
+      SoundEffects.success();
+    }
+  });
+}
+
 // Global initializations
-loadQuestions();
-renderBoard();
+initFirebase();
